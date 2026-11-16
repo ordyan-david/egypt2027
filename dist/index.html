@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eee9df">
+  <meta name="description" content="Египет 2027: два варианта — 6–14 или 7–15 февраля. 9 дней, 8 ночей в Египте; выезд из Воронежа утром, возвращение домой на следующее утро после прилёта в Москву.">
+  <meta property="og:title" content="Египет 2027 — одно большое приключение">
+  <meta property="og:description" content="9 дней. 3 города. 4 друга. 6–14 или 7–15 февраля — выбираем даты, маршрут и дорогу домой.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <title>Египет 2027 — одно большое приключение</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+  <link rel="stylesheet" href="./assets/vendor/leaflet.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preload" href="./assets/images/hero.webp" as="image" fetchpriority="high">
+  <script src="./assets/vendor/leaflet.js" defer></script>
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Египет 2027 — в начало">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="13" r="6"/><path d="M3 33 15 14 28 33ZM19 33l9-13 9 13"/></svg>
+      <span>ЕГИПЕТ<span class="brand-year">/ 2027</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Основная навигация"><a href="#route">Маршрут</a><a href="#days">По дням</a><a href="#budget">Бюджет</a><a href="#guide">Полезное</a></nav>
+    <a class="header-cta" href="#lets-go">Ну что, летим? <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>
+    <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Навигация на телефоне" hidden><a href="#route">Маршрут</a><a href="#days">По дням</a><a href="#budget">Бюджет</a><a href="#prices">Цены на месте</a><a href="#guide">Полезное</a></nav>
+
+  <main id="main">
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="./assets/images/hero.webp" alt="Пирамиды Гизы на фоне тёплого закатного неба" width="2000" height="1333" fetchpriority="high">
+      <div class="hero-shade"></div>
+      <div class="hero-inner">
+        <div class="hero-topline"><span class="hero-pill"><span class="tiny-dot"></span> ПЛАН НА ФЕВРАЛЬ</span><div class="hero-variant-picker"><span class="variant-picker-label">ДВА ВАРИАНТА ДАТ</span><div class="variant-buttons" role="group" aria-label="Выбрать даты поездки"><button data-variant="6-14" class="active" aria-pressed="true">6–14 февраля</button><button data-variant="7-15" aria-pressed="false">7–15 февраля</button></div></div></div>
+        <div class="hero-title-line"><h1 id="hero-title">ЕГИПЕТ</h1><span class="hero-year">20<br>27<span class="year-star" aria-hidden="true"><svg class="icon-star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2v36M2 20h36M7 7l26 26M7 33 33 7"/></svg></span></span></div>
+        <div class="hero-bottom">
+          <div class="hero-copy"><h2>9 дней. 3 города.<br>Одно большое приключение.</h2><p>Красное море, древние храмы и шумный Каир.<br><span id="hero-trip-dates">6–14 февраля 2027</span> · 8 ночей · 4 друга.</p><a class="button button-cream" href="#route">Посмотреть маршрут <span aria-hidden="true"><svg class="icon-arrow turn-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></div>
+          <a class="hero-budget" href="#budget"><span class="micro-label">НАШ ОРИЕНТИР</span><strong>105 000 <span>₽</span></strong><span>на человека · за всё путешествие</span><span class="hero-budget-foot">Предварительная смета <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span></a>
+        </div>
+        <div class="hero-baseline"><span>27°15′ с. ш. — 30°02′ с. ш.</span><a href="#concept">Листай навстречу приключению <span aria-hidden="true">↓</span></a><span>МОРЕ / ИСТОРИЯ / ЖИЗНЬ</span></div>
+      </div>
+    </section>
+
+    <section id="concept" class="intro section-wrap reveal" aria-labelledby="intro-title">
+      <div class="intro-label"><span class="eyebrow"><span class="section-index">01</span> ИДЕЯ ПОЕЗДКИ</span><span class="sun-doodle" aria-hidden="true"><svg class="icon-star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2v36M2 20h36M7 7l26 26M7 33 33 7"/></svg></span></div>
+      <div class="intro-copy"><h2 id="intro-title">Одна страна.<br><span class="muted">Три совершенно разных мира.</span></h2><p>Сначала — солёные волосы и Красное море. Потом — храмы, которым тысячи лет. И напоследок — затеряться среди улочек Каира, найти свой кошари и встретить закат у Нила.</p><div class="trip-facts"><span><b>4</b> друга</span><span><b>9</b> дней</span><span><b>8</b> ночей</span><span class="fact-note">Сами выбираем<br>ритм и впечатления</span></div></div>
+    </section>
+
+    <section id="travel" class="travel-section section-wrap" aria-labelledby="travel-title">
+      <div class="travel-heading"><div><span class="eyebrow">ДОРОГА ТУДА И ОБРАТНО</span><h2 id="travel-title">Считаем весь путь.</h2></div><p id="variant-summary" aria-live="polite">6–14 февраля — 9 дней и 8 ночей в Египте.<br>Дома в Воронеже — утром 15 февраля.</p></div>
+      <div id="travel-legs" class="travel-legs"></div>
+      <p class="travel-note">Это условия подбора билетов. Поезда и рейсы пока не выбраны: учитываем дорогу между вокзалом и аэропортом, регистрацию, контроль и получение багажа. Даты возвращения считаем по прилёту в Москву.</p>
+    </section>
+
+    <section id="route" class="route-section section-wrap" aria-labelledby="route-title">
+      <div class="section-heading reveal"><div><span class="eyebrow"><span class="section-index">02</span> НАШ МАРШРУТ</span><h2 id="route-title">От моря — к вечности.</h2></div><p>Прилетаем в Хургаду, улетаем из Каира.<br>Каждый переезд открывает что-то новое.</p></div>
+      <div id="city-cards" class="city-cards"></div>
+      <div class="route-map-layout reveal">
+        <div class="map-story"><span class="eyebrow">ЕГИПЕТ, БЕЗ КРУГОВ</span><h3>Всё складывается<br>в один маршрут.</h3><div class="route-path"><span>Воронеж</span><span class="path-link">↕</span><span>Москва</span><span class="path-link">✈</span><b>Хургада</b><span class="path-link">↓</span><b>Луксор</b><span class="path-link">✈</span><b>Каир</b><span class="path-link">✈</span><span>Москва → Воронеж</span></div><p id="route-transfer">Хургада → Луксор: закладываем 4–6 часов на автобус или трансфер. Вечером 10 февраля — перелёт в Каир.</p><p class="small-note">Рейсы, расписание и багаж проверяем перед покупкой. Линии на карте показывают последовательность, а не навигационный трек.</p><button id="reset-map" class="text-button">Весь маршрут <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></button></div>
+        <div class="map-panel"><div class="map-top"><span><span class="tiny-dot"></span> КАРТА ПУТЕШЕСТВИЯ</span><span>Нажми на точку</span></div><div id="route-map" role="region" aria-label="Интерактивная карта маршрута по Египту"></div><div class="map-points" id="map-points" aria-label="Точки маршрута"></div><div id="map-description" class="map-description" aria-live="polite">Выбери город или достопримечательность — приблизим её на карте.</div></div>
+      </div>
+    </section>
+
+    <section id="days" class="days-section section-wrap" aria-labelledby="days-title">
+      <div class="section-heading reveal"><div><span class="eyebrow"><span class="section-index">03</span> ПРОГРАММА ПО ДНЯМ</span><h2 id="days-title">Девять дней,<br>которые запомним.</h2></div><p>Есть план. И есть место спонтанности.<br>Выбирай дату, чтобы заглянуть в этот день.</p></div>
+      <div class="schedule-variant-row"><div class="variant-buttons variant-buttons-light" role="group" aria-label="Даты программы"><button data-variant="6-14" class="active" aria-pressed="true">6–14 февраля</button><button data-variant="7-15" aria-pressed="false">7–15 февраля</button></div><span id="schedule-home-note">В Воронеже — утром 15 февраля</span></div>
+      <div id="day-tabs" class="day-tabs" role="tablist" aria-label="Дни путешествия"></div>
+      <div id="day-panel" class="day-panel" role="tabpanel" tabindex="0"></div>
+      <div class="day-bottom"><span>9 дней программы + утро возвращения домой в календаре.</span><button id="download-calendar" class="text-button">Добавить даты в календарь <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></button></div>
+    </section>
+
+    <section id="budget" class="budget-section" aria-labelledby="budget-title">
+      <div class="section-wrap">
+        <div class="section-heading"><div><span class="eyebrow"><span class="section-index">04</span> БЕЗ МАГИИ В ЦИФРАХ</span><h2 id="budget-title">Большое путешествие.<br>Понятный бюджет.</h2></div><div class="segment-control" aria-label="Для скольких считаем"><button class="active" data-people="1" aria-pressed="true">На одного</button><button data-people="4" aria-pressed="false">На четверых</button></div></div>
+        <div class="budget-layout">
+          <div class="budget-overview"><span id="budget-total-label" class="micro-label">НА ОДНОГО ЧЕЛОВЕКА</span><div id="budget-total" class="budget-total" aria-live="polite">105 000 <span>₽</span></div><p id="budget-subtotal" class="budget-subtotal">420 000 ₽ на всю компанию</p><div class="budget-chart-wrap"><div id="budget-chart" class="budget-chart" role="img" aria-label="Распределение предварительного бюджета"><div><span>9 дней</span><strong>впечатлений</strong></div></div><ul id="budget-legend" class="budget-legend"></ul></div><div class="budget-scenario"><label for="flight-extra">Если перелёты подорожают <output id="flight-extra-label" for="flight-extra">+0 ₽ / чел.</output></label><input type="range" id="flight-extra" min="0" max="15000" step="1000" value="0"><div class="range-labels"><span>По плану</span><span>+15 000 ₽</span></div><label class="check-option"><input type="checkbox" id="souvenirs"><span>Добавить 5 000 ₽ на сувениры каждому</span></label></div></div>
+          <div class="budget-breakdown"><div class="budget-table-heading"><span>СТАТЬЯ РАСХОДОВ</span><span id="budget-column-title">НА ЧЕЛОВЕКА</span></div><div id="budget-rows"></div><div class="budget-table-total"><strong>Итого</strong><strong id="budget-table-total">105 000 ₽</strong></div><p class="budget-footnote">Резерв — 5 100 ₽: сюда перенесли 2 300 ₽ после сокращения жилья и питания. Для обоих вариантов используем одну смету; реальные цены на разные даты сравним отдельно. Сувениры — по желанию.</p></div>
+        </div>
+        <div class="budget-notice"><span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span><p><strong>Это ориентир, а не стоимость бронирования.</strong> Самые чувствительные статьи — билеты и жильё. Если они подорожают, планируем 110–120 тысяч ₽ на человека. Бронирований пока нет.</p></div>
+      </div>
+    </section>
+
+    <section id="experiences" class="experiences-section section-wrap" aria-labelledby="experiences-title">
+      <div class="section-heading reveal"><div><span class="eyebrow"><span class="section-index">05</span> РАДИ ЧЕГО ВСЁ ЭТО</span><h2 id="experiences-title">Чуть больше,<br>чем просто отпуск.</h2></div><p>Собираем не галочки в списке,<br>а истории, которые потом будем рассказывать.</p></div>
+      <div class="experience-grid">
+        <article class="experience-card experience-sea"><img src="./assets/images/reef.webp" alt="Кораллы и подводный мир Красного моря" width="1000" height="667" loading="lazy"><div><span class="photo-tag">КРАСНОЕ МОРЕ</span><h3>Увидеть другой мир.<br>Просто нырнув.</h3><p>Снорклинг, рифы и целый день на воде.</p></div></article>
+        <article class="experience-card experience-desert"><img src="./assets/images/desert.webp" alt="Песчаные дюны в Египте" width="1000" height="667" loading="lazy"><div><span class="photo-tag">ПУСТЫНЯ</span><h3>Поймать тишину<br>между дюнами.</h3><p>Сафари — если захотим добавить немного скорости.</p></div></article>
+        <article class="experience-card experience-market"><img src="./assets/images/cairo.webp" alt="Лавки и улочки рынка Хан-эль-Халили в Каире" width="1000" height="602" loading="lazy"><div><span class="photo-tag">МЕСТНАЯ ЖИЗНЬ</span><h3>Поторговаться.<br>Заблудиться. Найти своё.</h3><p>Рынки, каркаде и разговоры до позднего вечера.</p></div></article>
+        <article class="experience-food"><span class="eyebrow">ВКУС ЕГИПТА</span><h3>Начнём<br>с кошари?</h3><p>Потом фуль, таамея, кофта и ум али. Маленькие кафе, большие порции и новые любимые блюда.</p><img src="./assets/images/food.webp" alt="Кошари — египетское блюдо из риса, макарон и бобовых" width="1000" height="667" loading="lazy"><a class="text-button" href="#prices">Что сколько стоит <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></article>
+      </div>
+      <div class="evening-note"><span class="evening-icon" aria-hidden="true">☾</span><div><h3>А вечером — просто быть здесь.</h3><p>Прогулка по Марине, чай в местной кофейне, шиша по желанию и шум города вокруг. Без обязательной программы и гонки за впечатлениями.</p></div></div>
+    </section>
+
+    <section id="prices" class="prices-section section-wrap" aria-labelledby="prices-title">
+      <div class="section-heading reveal"><div><span class="eyebrow"><span class="section-index">06</span> НА МЕСТЕ</span><h2 id="prices-title">А сколько стоит<br>обычный день?</h2></div><p>Плановые ориентиры из нашей сметы.<br>Не меню и не подтверждённые тарифы.</p></div>
+      <div class="prices-box"><div class="prices-toolbar"><div id="price-tabs" class="price-tabs" role="tablist" aria-label="Категории цен"></div><div class="rate-controls"><label>1 EGP = <input id="egp-rate" type="number" min="0.1" max="20" step="0.1" value="1.6" inputmode="decimal" aria-label="Плановый курс египетского фунта в рублях"> ₽</label><label>1 USD = <input id="usd-rate" type="number" min="1" max="500" step="1" value="90" inputmode="decimal" aria-label="Плановый курс доллара в рублях"> ₽</label></div></div><div id="price-panel" role="tabpanel" tabindex="0"><table class="price-table"><thead><tr><th scope="col">Что покупаем</th><th scope="col">На месте</th><th scope="col">Примерно в рублях</th></tr></thead><tbody id="price-rows"></tbody></table></div><p id="price-note" class="price-note"></p><div class="rate-disclaimer"><span aria-hidden="true">↔</span><span>Курс плановый, с запасом. Меняй его для своей прикидки. Это не курс обменника и не прогноз на февраль. Бюджет выше задан отдельно в рублях.</span></div></div>
+    </section>
+
+    <section id="stay" class="stay-section section-wrap" aria-labelledby="stay-title">
+      <div class="stay-heading reveal"><span class="eyebrow"><span class="section-index">07</span> НАШ ДОМ НА ЭТИ ДНИ</span><h2 id="stay-title">Высыпаемся.<br>И идём исследовать.</h2><p>Две двухместные комнаты или апартаменты с двумя спальнями. Чисто, хорошие отзывы, удобный район. По возможности — завтрак.</p><div class="stay-budget"><strong>13 500 ₽</strong><span>на человека за 8 ночей<br>предварительно</span></div></div><div id="stay-cards" class="stay-cards"></div>
+    </section>
+
+    <section id="guide" class="guide-section section-wrap" aria-labelledby="guide-title">
+      <div class="section-heading reveal"><div><span class="eyebrow"><span class="section-index">08</span> ПЕРЕД ТЕМ КАК СОБРАТЬ ЧЕМОДАН</span><h2 id="guide-title">Хорошо знать заранее.</h2></div><p>Немного подготовки —<br>и больше спокойствия в дороге.</p></div>
+      <div class="guide-layout"><aside class="weather-card"><span class="eyebrow">ХУРГАДА / ФЕВРАЛЬ</span><div class="weather-sun" aria-hidden="true">☀</div><strong>+21…23°</strong><span>ориентир днём</span><div class="weather-detail"><span>Море<br><b>+21…23 °C</b></span><span>Ночью<br><b>+12…14 °C</b></span></div><p>Солнце уже южное, а ветер ещё зимний. Худи, лёгкая куртка и бассейн с подогревом пригодятся.</p><span class="weather-caption">Сезонный ориентир, не прогноз на даты поездки.</span></aside><div id="guide-accordions" class="guide-accordions"></div></div>
+      <details class="source-details"><summary>Источники и что ещё проверим перед покупкой <span aria-hidden="true">+</span></summary><div class="source-content"><p>План собран 16 ноября 2026. Расходы взяты из предварительной сметы поездки. Официальные ссылки ниже помогут проверить изменяемые условия ближе к вылету.</p><ul id="sources"></ul><p>Не подтверждены конкретные авиарейсы, размещение и рейс автобуса на наши даты. Александрию оставляем на другое путешествие: в этих восьми ночах уже достаточно открытий.</p><p class="photo-credits" id="photo-credits"></p></div></details>
+    </section>
+
+    <section id="lets-go" class="final-section" aria-labelledby="final-title"><div class="final-texture"></div><div class="section-wrap final-inner"><span class="eyebrow"><span id="final-trip-dates">6–14 ФЕВРАЛЯ 2027</span> &nbsp; / &nbsp; ЧЕТВЕРО ДРУЗЕЙ</span><h2 id="final-title">Ну что,<br><span>летим?</span><svg viewBox="0 0 140 140" aria-hidden="true"><path d="M15 124 120 18M15 18h105v105"/></svg></h2><div class="final-bottom"><p>9 дней, которые станут общей историей.<br><strong>Ориентир — 105 000 ₽ на человека.</strong></p><div class="final-actions"><button class="button button-dark" id="share-trip">Поделиться поездкой <span aria-hidden="true"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></button><button class="text-button" id="download-plan">Скачать краткий план <span aria-hidden="true">↓</span></button></div></div><p class="final-note"><span id="final-home-note">В Москву — вечером 14 февраля, в Воронеж — утром 15-го.</span><br>Сначала согласуем идею. Потом проверим стыковки и забронируем.</p></div></section>
+  </main>
+  <footer class="site-footer section-wrap"><a class="footer-brand" href="#top">ЕГИПЕТ / 2027</a><span>Наше самостоятельное приключение.</span><a href="#top">Наверх ↑</a></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="share-dialog" class="share-dialog"><button id="close-share" class="close-dialog" aria-label="Закрыть">×</button><span class="eyebrow">ПЛАНЫ ЛУЧШЕ ДЕЛИТЬ НА ЧЕТВЕРЫХ</span><h2>Отправь друзьям.</h2><p>Ссылка сохранит выбранный вариант дат. Если сайт открыт только тебе, сначала включи доступ по ссылке или опубликуй его на GitHub Pages.</p><label for="share-url">Ссылка на эту поездку</label><input id="share-url" readonly><button id="copy-share" class="button button-dark">Скопировать ссылку ↗</button></dialog>
+  <noscript><div class="noscript-note">Для карты и переключения дат включите JavaScript. Два варианта: 6–14 или 7–15 февраля 2027, 9 дней и 8 ночей в Египте. Утром первого дня Воронеж → Москва, прибытие около 14:00, затем рейс в Хургаду. Возвращение в Москву вечером 14-го или 15-го, ночной поезд и дома утром 15-го или 16-го. Смета — 105 000 ₽ на человека.</div></noscript>
+</body>
+</html>

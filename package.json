@@ -1,0 +1,15 @@
+{
+  "name": "egypt-friends-2027",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Египет для четырёх друзей: Хургада, Луксор и Каир, 6–14 или 7–15 февраля 2027, 9 дней и 8 ночей.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
